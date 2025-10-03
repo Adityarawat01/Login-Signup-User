@@ -49,13 +49,13 @@ Follow the steps below to install dependencies and run the server locally.
 
 ### 📥 Installation  
 
-1. **Clone the Repository**  
+**Clone the Repository**  
 
 ```bash
 git clone https://github.com/Adityarawat01/Login-Signup-User.git
 cd Login-Signup-User
 
-2. **Create and Activate Virtual Environment**
+2. Create and Activate Virtual Environment
 
 # Windows
 python -m venv venv
@@ -65,19 +65,19 @@ python -m venv venv
 python3 -m venv venv
 source venv/bin/activate
 
-3. **Install Required Libraries**
+3. Install Required Libraries
 
 pip install -r requirements.txt
 
-4. **Database Setup**
+4. Database Setup
 
 python manage.py migrate
 
-5. **Create Admin User**
+5. Create Admin User
 
 python manage.py createsuperuser
 
-6. **Run the Server**
+6. Run the Server
 
 python manage.py runserver 5000
 
