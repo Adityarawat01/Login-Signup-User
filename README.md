@@ -47,16 +47,6 @@ A Django-based web application that provides a **role-based login and signup sys
 
 ---
 
-## 🗂 Project Structure
-Login-Signup-User/
-│
-├── accounts/ # Authentication (User registration, login)
-├── blog/ # Blog system (Categories, Posts)
-├── medauth_project/ # Main Django configuration
-├── media/ # Uploaded profile/blog images
-├── templates/ # Base and dashboard templates
-├── manage.py
-└── requirements.txt
 
 
 ---
@@ -135,14 +125,3 @@ python manage.py runserver 5000
 Open in Browser
 http://127.0.0.1:5000/
 
-🧰 Environment Configuration
-
-If using PostgreSQL (e.g., on Replit), update settings.py:
-
-import dj_database_url
-
-DATABASES = {
-    'default': dj_database_url.config(
-        default='postgresql://<username>:<password>@<host>/<dbname>'
-    )
-}
