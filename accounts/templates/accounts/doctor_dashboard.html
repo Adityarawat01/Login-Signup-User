@@ -36,4 +36,10 @@
 <div class="info-row">
     <span class="info-label">Address:</span> {{ user.address_line1 }}, {{ user.city }}, {{ user.state }} - {{ user.pincode }}
 </div>
+
+<h2 style="margin-top: 30px;">Blog Management</h2>
+<div style="margin-top: 15px;">
+    <a href="{% url 'create_blog_post' %}" class="btn">Create New Blog Post</a>
+    <a href="{% url 'my_posts' %}" class="btn" style="background: #28a745; margin-left: 10px;">View My Posts</a>
+</div>
 {% endblock %}

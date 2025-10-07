@@ -1,0 +1,30 @@
+{% extends 'accounts/base.html' %}
+
+{% block title %}My Blog Posts{% endblock %}
+
+{% block content %}
+<h1>My Blog Posts <a href="{% url 'create_blog_post' %}" class="btn" style="float: right; font-size: 14px;">Create New Post</a></h1>
+
+{% if posts %}
+    {% for post in posts %}
+    <div style="border: 1px solid #ddd; padding: 15px; margin: 15px 0; border-radius: 4px;">
+        <h3>{{ post.title }} 
+            {% if post.is_draft %}
+                <span style="background: #ffc107; color: #000; padding: 2px 8px; border-radius: 3px; font-size: 12px;">DRAFT</span>
+            {% endif %}
+        </h3>
+        {% if post.image %}
+        <img src="{{ post.image.url }}" alt="{{ post.title }}" style="max-width: 300px; border-radius: 4px; margin: 10px 0;">
+        {% endif %}
+        <p><strong>Category:</strong> {{ post.category }}</p>
+        <p><strong>Summary:</strong> {{ post.summary }}</p>
+        <p><strong>Created:</strong> {{ post.created_at|date:"F d, Y" }}</p>
+    </div>
+    {% endfor %}
+{% else %}
+    <p>You haven't created any blog posts yet.</p>
+    <a href="{% url 'create_blog_post' %}" class="btn">Create Your First Post</a>
+{% endif %}
+
+<a href="{% url 'dashboard' %}" class="btn" style="background: #6c757d; margin-top: 15px;">Back to Dashboard</a>
+{% endblock %}
